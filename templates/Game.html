@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+</head>
+<style>
+    body {
+        font-family: 'Gelasio', serif;
+        padding: 0px;
+        margin: 0px;
+    }
+    div {
+        align-items: center;
+    }
+    .gameBtn {
+        color: white;
+        position: relative;
+        left: 13px;
+        top:300px;
+        margin-left: 30px;
+        padding: 25px;
+        background-color: skyblue;
+        border: 1px white solid;
+        box-shadow: 1px 2px 1px  white;
+    }
+    .gameBtn:hover{
+        color: skyblue;
+        padding: 25px;
+        background-color: white;
+        border-color:skyblue ;
+
+
+    }
+    h2{ display: none;
+        color: white;
+        position: relative;
+        left:140px;
+        top:280px;
+    }
+    h3{ color: white;
+        position: relative;
+        left:140px;
+        top:290px;
+    }
+    #restartBtn {
+     display: none;   
+     position: relative;   
+     padding: 10px;
+     background-color: tomato;   
+     border:1px white solid ;
+     top:290px
+    }
+    #restartBtn:hover{
+        background-color: white;
+        border: tomato;
+    }
+    h1 {
+        color:white;
+    }
+</style>
+<body onload="collectScore(1)">
+    
+    
+    <div style="height:810px; width:421px; background-image:linear-gradient(red,blue);">
+        <h4>MaxScore:12 MinScore:-12</h4>
+        <h2 id="gameOver">Game Over</h2>
+        <h3 id="Score"></h3>
+        <center><h1>Get Reward</h1></center>
+        <button class="gameBtn" id="Good" onclick="collectScore(1);">BTn1</button>
+        <button class="gameBtn" id="Neutral" onclick="collectScore(0)">BTn1</button>
+        <button class="gameBtn" id="Bad" onclick="collectScore(-1)">BTn1</button>
+        <center><button id="restartBtn" onClick="window.location.reload();">Restart Game</button></center> 
+    </div>
+
+   <script id="whichGame" src="{{url_for('static',filename='Game2.js')}}"></script>
+</body>
+</html>
